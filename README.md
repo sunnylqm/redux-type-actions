@@ -22,7 +22,7 @@ Configurations for web are WIP.
 
 ### Usage
 
-```
+```typescript
 // actions.ts
 import {
   ActionValue,
@@ -52,7 +52,7 @@ export type ActionValueType
 export default actions;
 ```
 
-```
+```typescript
 // reducers.ts
 import { ActionValueType } from './actions';
 
@@ -72,7 +72,7 @@ function reducers(state,
 ```
 
 
-```
+```typescript
 // sagas.ts
 import { delay, fork, put, take } from 'redux-saga/effects';
 import actions from './actions';
