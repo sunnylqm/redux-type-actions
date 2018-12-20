@@ -50,8 +50,9 @@ export type ActionValueType
   = ActionValue<typeof actions>;
 
 export default actions;
+```
 
-
+```
 // reducers.ts
 import { ActionValueType } from './actions';
 
@@ -68,9 +69,10 @@ function reducers(state,
       return state;
   }
 }
-// ...
+```
 
 
+```
 // sagas.ts
 import { delay, fork, put, take } from 'redux-saga/effects';
 import actions from './actions';
@@ -91,6 +93,4 @@ function* watchPretendToFetch() {
     );
   }
 }
-// ...
-
 ```
