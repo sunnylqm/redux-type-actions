@@ -1,0 +1,32 @@
+{
+  "name": "redux-type-actions",
+  "version": "1.0.0",
+  "description": "Make redux actions easy to write and strong typed!",
+  "main": "index.ts",
+  "files": [
+    "index.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnylqm/redux-type-actions.git"
+  },
+  "keywords": [
+    "redux",
+    "action",
+    "typescript"
+  ],
+  "author": "sunnylqm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunnylqm/redux-type-actions/issues"
+  },
+  "homepage": "https://github.com/sunnylqm/redux-type-actions#readme",
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  }
+}
