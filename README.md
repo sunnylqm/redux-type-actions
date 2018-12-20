@@ -3,7 +3,7 @@
 Make redux actions easy to write and strong typed!
 No more `"UGLY_UPPER_CASE_UNDERSCORE_ACTION"` and bring `auto complete` to the redux world!
 
-https://user-images.githubusercontent.com/615282/50281670-3654c080-048b-11e9-8ff9-ffbee9f193c6.gif
+![](https://user-images.githubusercontent.com/615282/50281670-3654c080-048b-11e9-8ff9-ffbee9f193c6.gif)
 
 ### Installation
 
