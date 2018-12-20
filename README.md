@@ -1,4 +1,4 @@
-# redux-type-actions
+# redux-type-actions ![npm version](https://img.shields.io/npm/v/redux-type-actions.svg)
 
 Make redux actions easy to write and strong typed!
 No more `"UGLY_UPPER_CASE_UNDERSCORE_ACTION"` and bring `auto complete` to the redux world!
