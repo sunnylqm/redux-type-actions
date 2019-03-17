@@ -14,8 +14,9 @@ export function createActions<ActionsMapping extends { [key: string]: (...args: 
 ) {
   const typedActions: Partial<TypedActions<ActionsMapping>> = {};
 
-  let key: keyof ActionsMapping;
-  for (key in actions) {
+  let keyOutofClosure: keyof ActionsMapping;
+  for (keyOutofClosure in actions) {
+    const key = keyOutofClosure;
     const typedAction = actions[key](key);
     typedAction.toString = () => key; // for redux-saga
     typedActions[key] = typedAction;
