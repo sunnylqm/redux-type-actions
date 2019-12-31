@@ -7,11 +7,12 @@ export const ToggleAction = createAction<boolean>();
 export const StringAction = createAction<string>();
 export const NumberAction = createAction<number>();
 
-type TypedActions<T extends { [key: string]: (...args: any[]) => any }> = { [K in keyof T]: ReturnType<T[K]> };
+type AnyFunction = (...args: any[]) => any;
+export type TypedActions<T extends { [key: string]: AnyFunction }> = {
+  [K in keyof T]: (...args: Parameters<ReturnType<T[K]>>) => ReturnType<ReturnType<T[K]>> & { type: K };
+};
 
-export function createActions<ActionsMapping extends { [key: string]: (...args: any[]) => any }>(
-  actions: ActionsMapping,
-) {
+export function createActions<ActionsMapping extends { [key: string]: AnyFunction }>(actions: ActionsMapping) {
   const typedActions: Partial<TypedActions<ActionsMapping>> = {};
 
   let keyOutofClosure: keyof ActionsMapping;
@@ -25,10 +26,10 @@ export function createActions<ActionsMapping extends { [key: string]: (...args: 
   return typedActions as TypedActions<ActionsMapping>;
 }
 
-type refineAction<T extends { [key: string]: (...args: any[]) => any }> = {
-  [K in keyof T]: ReturnType<T[K]> & { type: K }
+type refineAction<T extends { [key: string]: AnyFunction }> = {
+  [K in keyof T]: ReturnType<T[K]>;
 };
 
 type ValueOf<T> = T[keyof T];
 
-export type ActionValue<T extends { [key: string]: (...args: any[]) => any }> = ValueOf<refineAction<T>>;
+export type ActionValue<T extends { [key: string]: AnyFunction }> = ValueOf<refineAction<T>>;
